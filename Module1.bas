@@ -12,7 +12,7 @@ Sub import_data()
     Dim Cate As String
     
     Application.ScreenUpdating = False
-'    On Error GoTo ErrHandler
+    On Error GoTo ErrHandler
 
     
     Set ws_main = ActiveWorkbook.Sheets("sheet1")
@@ -56,9 +56,9 @@ Sub import_data()
         Next sh
         wk.Close
     Next
-'ErrHandler:
-'    MsgBox Err.Description
-'    GoTo ExitHandler
+ErrHandler:
+    MsgBox Err.Description
+    GoTo ExitHandler
 
 ExitHandler:
     Application.ScreenUpdating = True
